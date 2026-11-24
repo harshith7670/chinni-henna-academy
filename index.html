@@ -97,19 +97,4 @@ function getYouTubeId(url){var m=url.match(/(?:youtube\.com\/watch\?v=|youtu\.be
 function addVideo(){var title=document.getElementById('vTitle').value||"New Video";var type=document.getElementById('vType').value;var link=document.getElementById('vLink').value.trim();var file=document.getElementById('vFile').files[0];var container=document.getElementById(type);if(file){var url=URL.createObjectURL(file);var div=document.createElement('div');div.className='video-card';div.innerHTML='<div class="video-box"><video src="'+url+'" controls></video></div><h3>'+title+'</h3><button onclick="this.parentElement.remove()" style="background:#ff4d6d;color:white;border:none;padding:6px 14px;border-radius:20px;margin-top:8px;cursor:pointer">Delete ❌</button>';container.prepend(div);alert("Video Added! ✅");document.getElementById('vTitle').value='';document.getElementById('vLink').value='';document.getElementById('vFile').value='';return;}if(!link){alert("Link ivvu leka file select chey macha!");return;}var ytId=getYouTubeId(link);var div=document.createElement('div');div.className='video-card';if(ytId){div.innerHTML='<div class="video-box"><iframe src="https://www.youtube.com/embed/'+ytId+'" allowfullscreen></iframe></div><h3>'+title+'</h3><button onclick="this.parentElement.remove()" style="background:#ff4d6d;color:white;border:none;padding:6px 14px;border-radius:20px;margin-top:8px;cursor:pointer">Delete ❌</button>';}else{div.innerHTML='<div class="video-box"><video src="'+link+'" controls></video></div><h3>'+title+'</h3><button onclick="this.parentElement.remove()" style="background:#ff4d6d;color:white;border:none;padding:6px 14px;border-radius:20px;margin-top:8px;cursor:pointer">Delete ❌</button>';}container.prepend(div);alert("Video Added! ✅");document.getElementById('vTitle').value='';document.getElementById('vLink').value='';}
 </script>
 </body>
-  <style>
-/* ROYAL GOLD - SUPER STRONG */
-body, html { background: #150A08 !important; }
-header, .top-bar, .topbar, .header-top, div:first-child { background: #C9A24B !important; }
-.top-bar *, header .top-bar { color: #150A08 !important; }
-h1, h2, h3, .price { color: #C9A24B !important; }
-/* ANNI BUTTONS GOLD */
-button, a button, .btn, .book-btn, .whatsapp-btn, .order-btn, .order, .whatsapp, [class*="book"], [class*="order"], [class*="whatsapp"] {
-  background: #C9A24B !important;
-  background-color: #C9A24B !important;
-  color: #150A08 !important;
-  border: none !important;
-}
-.card, .cone-card { background: #221210 !important; border: 1px solid #C9A24B !important; }
-  </style>
 </html>
