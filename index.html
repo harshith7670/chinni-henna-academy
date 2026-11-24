@@ -1,38 +1,80 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chinni Henna Academy</title>
+<title>Chinni Henna Academy - Hyderabad</title>
 <style>
-body{margin:0;font-family:Arial;background:#111;color:#fff}
-header{background:#7b1e2b;text-align:center;padding:25px}
-h2{text-align:center;color:#ffcc99;margin-top:30px}
-.video-box{margin:15px;background:#222;padding:10px;border-radius:12px}
-.video-box iframe{width:100%;height:220px;border:0;border-radius:10px}
-button{background:#e07a5f;color:#fff;border:0;padding:10px 20px;border-radius:20px;cursor:pointer}
-input,select{width:100%;padding:10px;margin:8px 0;border-radius:8px;border:0}
-#adminPanel{display:none;position:fixed;inset:0;background:rgba(0,0,0,.8);z-index:99}
-.admin-box{background:#fff;color:#000;max-width:450px;margin:30px auto;padding:20px;border-radius:12px}
-.admin-box button{width:100%;background:#7b1e2b;margin-top:5px}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{background:#0f0f0f;color:#fff}
+header{background:linear-gradient(135deg,#7b1e2b,#2b0a0e);text-align:center;padding:30px 15px}
+header h1{font-size:32px;color:#ffd700}
+header p{margin-top:8px;color:#eee}
+nav{background:#1a1a1a;padding:12px;text-align:center;position:sticky;top:0;z-index:10}
+nav a{margin:0 12px;color:#ffd700;text-decoration:none;font-weight:bold}
+section{padding:30px 15px;max-width:1000px;margin:auto}
+h2{text-align:center;color:#fff;font-size:26px;margin-bottom:20px}
+h2 span{color:#ffd700}
+.video-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:15px}
+.video-box{background:#222;border-radius:12px;overflow:hidden;padding-bottom:10px}
+.video-box iframe{width:100%;height:210px;border:0}
+.video-box h3{padding:10px;text-align:center;font-size:16px}
+.video-box button{background:#ff4d4d;color:#fff;border:0;padding:6px 14px;border-radius:6px;display:block;margin:auto;cursor:pointer}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.gallery img{width:100%;height:180px;object-fit:cover;border-radius:10px}
+.course-box{background:#222;padding:20px;border-radius:12px;text-align:center;margin-bottom:15px}
+.book{background:#7b1e2b;text-align:center;border-radius:15px;padding:25px}
+.book a{display:inline-block;background:#25D366;color:#fff;padding:12px 25px;border-radius:25px;text-decoration:none;font-weight:bold;margin-top:15px}
+footer{background:#000;text-align:center;padding:20px}
+footer button{background:#e07a5f;color:#fff;border:0;padding:8px 18px;border-radius:20px;cursor:pointer;margin-top:10px}
+#adminPanel{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:99;overflow:auto}
+.admin-box{background:#fff;color:#000;max-width:500px;margin:30px auto;padding:20px;border-radius:12px}
+.admin-box input,.admin-box select{width:100%;padding:10px;margin:8px 0;border:1px solid #ccc;border-radius:8px}
+.admin-box button{width:100%;padding:12px;background:#7b1e2b;color:#fff;border:0;border-radius:8px;cursor:pointer;margin-top:5px}
 </style>
 </head>
 <body>
 <header>
-<h1>Chinni Henna Academy</h1>
-<p>Basic to Bridal Mehndi Classes | Hyderabad</p>
+<h1>🌿 Chinni Henna Academy</h1>
+<p>Basic to Bridal Mehndi Classes | Hyderabad | Online + Offline</p>
+<p>📞 WhatsApp: 7670XXXXXX | 25 Days Course | Certificate Available</p>
 </header>
-<h2>ONLINE CLASS VIDEOS</h2>
-<div id="onlineVideos"></div>
-<h2>OFFLINE CLASS VIDEOS</h2>
-<div id="offlineVideos"></div>
-<h2>EVENTS VIDEOS</h2>
-<div id="eventVideos"></div>
-<div style="text-align:center;padding:20px;">
-<a href="https://wa.me/917670000000" style="background:#25D366;color:#fff;padding:12px 25px;border-radius:25px;text-decoration:none;">Book on WhatsApp</a>
+<nav>
+<a href="#videos">Videos</a>
+<a href="#courses">Courses</a>
+<a href="#gallery">Gallery</a>
+<a href="#booking">Booking</a>
+</nav>
+<section id="videos">
+<h2>ONLINE CLASS <span>VIDEOS</span></h2>
+<div id="onlineVideos" class="video-grid"></div>
+<h2 style="margin-top:35px">OFFLINE CLASS <span>VIDEOS</span></h2>
+<div id="offlineVideos" class="video-grid"></div>
+<h2 style="margin-top:35px">EVENTS <span>VIDEOS</span></h2>
+<div id="eventVideos" class="video-grid"></div>
+</section>
+<section id="courses">
+<h2>Our <span>Courses</span></h2>
+<div class="course-box"><h3>Basic to Bridal - 25 Days</h3><p>Basic to Bridal Full Course with Certificate</p><h3 style="color:#ffd700;margin-top:10px;">₹ 9,999</h3></div>
+<div class="course-box"><h3>Online Classes</h3><p>Learn From Home - Live Classes</p></div>
+</section>
+<section id="gallery">
+<h2>Our <span>Gallery</span></h2>
+<div class="gallery">
+<img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=400">
+<img src="https://images.unsplash.com/photo-1604004555489-723a93d6ce74?w=400">
+<img src="https://images.unsplash.com/photo-1610189844802-1c1b0e5b1b1e?w=400">
 </div>
-<footer style="text-align:center;padding:20px;background:#222;">
-<p>Chinni Henna Academy - Hyderabad</p>
+</section>
+<section id="booking">
+<div class="book">
+<h2 style="color:#fff">Book Your Bridal Mehndi / Join Classes</h2>
+<p>Book Now on WhatsApp</p>
+<a href="https://wa.me/917670000000?text=Hi%20Chinni%20Henna%20Academy,%20I%20want%20to%20join%20classes">Book on WhatsApp</a>
+</div>
+</section>
+<footer>
+<p>© Chinni Henna Academy - Hyderabad</p>
 <button onclick="openAdmin()">Admin</button>
 </footer>
 <div id="adminPanel"><div class="admin-box">
@@ -40,6 +82,8 @@ input,select{width:100%;padding:10px;margin:8px 0;border-radius:8px;border:0}
 <input type="password" id="adminPass" placeholder="Password">
 <button onclick="checkAdmin()">Login</button>
 <div id="adminForm" style="display:none">
+<hr>
+<h3>Add Video</h3>
 <input type="text" id="vTitle" placeholder="Video Title">
 <select id="vType">
 <option value="online">ONLINE CLASS VIDEOS</option>
@@ -59,7 +103,7 @@ function loadVideos(){
 var vids=JSON.parse(localStorage.getItem("chinniVideos")||"[]");
 if(vids.length===0){vids=[{title:"Informational Video For Mehndi Artist",id:"zfXAivWo0YQ",type:"online"}];localStorage.setItem("chinniVideos",JSON.stringify(vids));}
 var map={online:"onlineVideos",offline:"offlineVideos",events:"eventVideos"};
-for(var t in map){var box=document.getElementById(map[t]);box.innerHTML="";vids.forEach(function(v,i){if(v.type!==t)return;var d=document.createElement("div");d.className="video-box";d.innerHTML='<iframe src="https://www.youtube.com/embed/'+v.id+'" allowfullscreen></iframe><p style="text-align:center;">'+v.title+'</p><button onclick="deleteVideo('+i+')" style="background:red;">Delete</button>';box.appendChild(d);});}
+for(var t in map){var box=document.getElementById(map[t]);if(!box)continue;box.innerHTML="";vids.forEach(function(v,i){if(v.type!==t)return;var d=document.createElement("div");d.className="video-box";d.innerHTML='<iframe src="https://www.youtube.com/embed/'+v.id+'" allowfullscreen></iframe><h3>'+v.title+'</h3><button onclick="deleteVideo('+i+')">Delete</button>';box.appendChild(d);});}
 }
 function addVideo(){var title=document.getElementById('vTitle').value||"New Video";var type=document.getElementById('vType').value;var id=getYouTubeId(document.getElementById('vLink').value);if(!id){alert("Correct Link pettu!");return;}var vids=JSON.parse(localStorage.getItem("chinniVideos")||"[]");vids.push({title:title,id:id,type:type});localStorage.setItem("chinniVideos",JSON.stringify(vids));loadVideos();alert("Video Save Ayyindhi!");}
 function deleteVideo(i){var vids=JSON.parse(localStorage.getItem("chinniVideos")||"[]");vids.splice(i,1);localStorage.setItem("chinniVideos",JSON.stringify(vids));loadVideos();}
