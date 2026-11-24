@@ -1,113 +1,100 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chinni Henna Academy - Hyderabad</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chinni Henna Academy</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
-body{background:#0f0f0f;color:#fff}
-header{background:linear-gradient(135deg,#7b1e2b,#2b0a0e);text-align:center;padding:30px 15px}
-header h1{font-size:32px;color:#ffd700}
-header p{margin-top:8px;color:#eee}
-nav{background:#1a1a1a;padding:12px;text-align:center;position:sticky;top:0;z-index:10}
-nav a{margin:0 12px;color:#ffd700;text-decoration:none;font-weight:bold}
-section{padding:30px 15px;max-width:1000px;margin:auto}
-h2{text-align:center;color:#fff;font-size:26px;margin-bottom:20px}
-h2 span{color:#ffd700}
-.video-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:15px}
-.video-box{background:#222;border-radius:12px;overflow:hidden;padding-bottom:10px}
-.video-box iframe{width:100%;height:210px;border:0}
-.video-box h3{padding:10px;text-align:center;font-size:16px}
-.video-box button{background:#ff4d4d;color:#fff;border:0;padding:6px 14px;border-radius:6px;display:block;margin:auto;cursor:pointer}
-.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
-.gallery img{width:100%;height:180px;object-fit:cover;border-radius:10px}
-.course-box{background:#222;padding:20px;border-radius:12px;text-align:center;margin-bottom:15px}
-.book{background:#7b1e2b;text-align:center;border-radius:15px;padding:25px}
-.book a{display:inline-block;background:#25D366;color:#fff;padding:12px 25px;border-radius:25px;text-decoration:none;font-weight:bold;margin-top:15px}
-footer{background:#000;text-align:center;padding:20px}
-footer button{background:#e07a5f;color:#fff;border:0;padding:8px 18px;border-radius:20px;cursor:pointer;margin-top:10px}
-#adminPanel{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:99;overflow:auto}
-.admin-box{background:#fff;color:#000;max-width:500px;margin:30px auto;padding:20px;border-radius:12px}
-.admin-box input,.admin-box select{width:100%;padding:10px;margin:8px 0;border:1px solid #ccc;border-radius:8px}
-.admin-box button{width:100%;padding:12px;background:#7b1e2b;color:#fff;border:0;border-radius:8px;cursor:pointer;margin-top:5px}
+body{background:#0a0a0a;color:white}
+.topbar{background:#ffd60a;color:#000;padding:10px 15px;font-size:13px;font-weight:700;display:flex;justify-content:space-between;align-items:center}
+.topbar button{background:#000;color:#fff;border:none;padding:6px 12px;border-radius:20px;cursor:pointer}
+.hero{text-align:center;padding:35px 20px;background:radial-gradient(circle at top,#3b0a1a,#000)}
+.stage{perspective:1200px;display:flex;justify-content:center;margin-bottom:15px}
+.coin{width:200px;height:200px;position:relative;transform-style:preserve-3d;animation:spin 6s linear infinite;cursor:pointer}
+.coin img{width:100%;height:100%;object-fit:cover;border-radius:50%;position:absolute;inset:0;border:4px solid #ffd60a;box-shadow:0 0 60px rgba(255,215,10,.7);backface-visibility:hidden}
+.coin img.back{transform:rotateY(180deg)}
+@keyframes spin{0%{transform:rotateY(0) rotateX(5deg)}50%{transform:rotateY(180deg) rotateX(-5deg)}100%{transform:rotateY(360deg) rotateX(5deg)}}
+h1{font-size:34px}h1 span{color:#ffd60a}
+.hero p{color:#ccc;margin:12px 0;line-height:1.6}
+.btn-green{background:#25D366;color:white;padding:13px 26px;border-radius:50px;text-decoration:none;font-weight:bold;display:inline-block;border:none;cursor:pointer}
+.btn-pink{background:#ff4d6d;color:white;padding:12px 22px;border-radius:50px;text-decoration:none;font-weight:bold;display:inline-block;border:none;cursor:pointer}
+.pause-btn{background:#ffd60a;color:#000;padding:9px 18px;border-radius:50px;border:none;font-weight:800;cursor:pointer;margin:5px}
+.sec-title{text-align:center;font-size:26px;margin:35px 10px 8px}.sec-title span{color:#ffd60a}
+.single-stage{perspective:1200px;display:flex;justify-content:center;margin:20px 0}
+.one-cone{width:230px;height:420px;position:relative;transform-style:preserve-3d;animation:coneSpin 5s linear infinite;cursor:pointer}
+@keyframes coneSpin{0%{transform:rotateY(0deg)}50%{transform:rotateY(180deg)}100%{transform:rotateY(360deg)}}
+.cone-face{position:absolute;inset:0;backface-visibility:hidden}
+.cone-face.back{transform:rotateY(180deg)}
+.real-cone-img{width:210px;height:380px;margin:10px auto 0;overflow:hidden;border-radius:20px;background:#000}
+.real-cone-img img{width:100%;height:100%;object-fit:contain;background:#000}
+.cones-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:15px;padding:0 20px;max-width:1000px;margin:auto;perspective:1000px}
+.cone-card{background:#1a1a1a;border:1px solid #333;border-radius:20px;padding:20px;text-align:center;transform-style:preserve-3d}
+.rotate-3d{animation:cardSpin 6s linear infinite;cursor:pointer}
+@keyframes cardSpin{0%{transform:rotateY(0deg)}50%{transform:rotateY(180deg)}100%{transform:rotateY(360deg)}}
+.paused{animation-play-state:paused !important}
+.cone-3d-img{width:100%;height:220px;overflow:hidden;border-radius:15px;margin-bottom:12px;position:relative;background:#000}
+.cone-3d-img img{width:100%;height:100%;object-fit:contain;background:#000}
+.price{font-size:24px;font-weight:900;color:#ffd60a;margin:8px 0}.price s{font-size:16px;color:#888}
+.class-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:15px;padding:0 20px;max-width:1000px;margin:20px auto}
+.class-card{background:#1a1a1a;border:1px solid #333;border-radius:20px;padding:20px;text-align:center}
+.video-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px;padding:0 20px;max-width:1000px;margin:20px auto}
+.video-card{background:#1a1a1a;border:1px solid #333;border-radius:20px;padding:15px;text-align:center}
+.video-box{width:100%;height:220px;background:#000;border-radius:15px;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.video-box video,.video-box iframe{width:100%;height:100%;border:none}
+.video-card h3{margin-top:10px;font-size:16px}
+.book-box{max-width:600px;margin:30px auto;background:#1a1a1a;border:1px solid #ff4d6d;border-radius:20px;padding:20px}
+.book-box h2{text-align:center;margin-bottom:12px}
+input,select{width:100%;padding:13px;margin:7px 0;border-radius:12px;border:none;background:#222;color:white}
+.full{width:100%;text-align:center}
+.admin{display:none;max-width:600px;margin:20px auto;background:#222;border:2px solid #ffd60a;border-radius:20px;padding:20px}
+.admin label{font-size:13px;color:#ffd60a;display:block;margin-top:10px}
+.admin h4{margin-bottom:5px}
+footer{background:#5C0A0A;text-align:center;padding:20px;font-size:13px;margin-top:30px}
+@media(max-width:700px){.cones-grid,.class-grid,.video-grid{grid-template-columns:1fr}h1{font-size:28px}.coin{width:170px;height:170px}}
 </style>
 </head>
 <body>
-<header>
-<h1>🌿 Chinni Henna Academy</h1>
-<p>Basic to Bridal Mehndi Classes | Hyderabad | Online + Offline</p>
-<p>📞 WhatsApp: 7670XXXXXX | 25 Days Course | Certificate Available</p>
-</header>
-<nav>
-<a href="#videos">Videos</a>
-<a href="#courses">Courses</a>
-<a href="#gallery">Gallery</a>
-<a href="#booking">Booking</a>
-</nav>
-<section id="videos">
-<h2>ONLINE CLASS <span>VIDEOS</span></h2>
-<div id="onlineVideos" class="video-grid"></div>
-<h2 style="margin-top:35px">OFFLINE CLASS <span>VIDEOS</span></h2>
-<div id="offlineVideos" class="video-grid"></div>
-<h2 style="margin-top:35px">EVENTS <span>VIDEOS</span></h2>
-<div id="eventVideos" class="video-grid"></div>
-</section>
-<section id="courses">
-<h2>Our <span>Courses</span></h2>
-<div class="course-box"><h3>Basic to Bridal - 25 Days</h3><p>Basic to Bridal Full Course with Certificate</p><h3 style="color:#ffd700;margin-top:10px;">₹ 9,999</h3></div>
-<div class="course-box"><h3>Online Classes</h3><p>Learn From Home - Live Classes</p></div>
-</section>
-<section id="gallery">
-<h2>Our <span>Gallery</span></h2>
-<div class="gallery">
-<img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=400">
-<img src="https://images.unsplash.com/photo-1604004555489-723a93d6ce74?w=400">
-<img src="https://images.unsplash.com/photo-1610189844802-1c1b0e5b1b1e?w=400">
+<div class="topbar">📞 6303131084 | 📸 @chinnihennaacademy | Hyderabad <button onclick="openAdmin()">⚙️ Admin</button></div>
+<div class="hero">
+  <div class="stage"><div class="coin" id="logoCoin"><img src="https://i.ibb.co/vC3S4Cgb/Screenshot-2026-11-13-20-46-41-78-1c337646f29875672b5a61192b9010f9.png"><img class="back" src="https://i.ibb.co/vC3S4Cgb/Screenshot-2026-11-13-20-46-41-78-1c337646f29875672b5a61192b9010f9.png"></div></div>
+  <button class="pause-btn" onclick="togglePause('logoCoin',this)">⏸️ Logo Pause / Play</button>
+  <h1>CHINNI HENNA <span>ACADEMY</span></h1><p>LEARN • CREATE • GROW<br>Gorinta Ante Idene!</p><a class="btn-green" href="https://wa.me/916303131084?text=Hi%20Chinni%20Henna!">Book on WhatsApp ✅</a>
 </div>
-</section>
-<section id="booking">
-<div class="book">
-<h2 style="color:#fff">Book Your Bridal Mehndi / Join Classes</h2>
-<p>Book Now on WhatsApp</p>
-<a href="https://wa.me/917670000000?text=Hi%20Chinni%20Henna%20Academy,%20I%20want%20to%20join%20classes">Book on WhatsApp</a>
+<h2 class="sec-title">🌀 OUR <span>REAL CONE - 3D</span></h2>
+<div class="single-stage"><div class="one-cone" id="oneCone"><div class="cone-face front"><div class="real-cone-img"><img src="https://i.ibb.co/QF1rBG61/IMG-20261124-WA0039.jpg"></div></div><div class="cone-face back"><div class="real-cone-img"><img src="https://i.ibb.co/QF1rBG61/IMG-20261124-WA0039.jpg"></div></div></div></div>
+<div style="text-align:center"><button class="pause-btn" onclick="togglePause('oneCone',this)">⏸️ Single Cone Pause / Play</button><br><br><div class="price">₹99 <s>₹149</s></div><a class="btn-pink" href="https://wa.me/916303131084?text=Hi!%20Ee%20Cone%20Kavali">Order This Cone ✅</a></div>
+<h2 class="sec-title">🌀 3D MEHNDI <span>CONES</span></h2>
+<div style="text-align:center;margin-bottom:15px"><button class="pause-btn" onclick="toggleAllCones(this)">⏸️ Anni Cones Pause / Play</button></div>
+<div class="cones-grid">
+  <div class="cone-card rotate-3d cone-item"><div class="cone-3d-img"><img src="https://i.ibb.co/QF1rBG61/IMG-20261124-WA0039.jpg"></div><h3>Fresh Henna Cone</h3><p>Dark Stain | 100% Natural</p><div class="price" id="price1">₹99</div><a class="btn-pink" href="https://wa.me/916303131084?text=Hi!%201%20Cone%20Kavali">Order Now</a></div>
+  <div class="cone-card rotate-3d cone-item"><div class="cone-3d-img"><img src="https://i.ibb.co/QF1rBG61/IMG-20261124-WA0039.jpg"></div><h3>Combo - 5 Cones</h3><p>Functions ki best</p><div class="price" id="price2">₹449</div><a class="btn-pink" href="https://wa.me/916303131084?text=Hi!%205%20Cones%20Kavali">Order Now</a></div>
+  <div class="cone-card rotate-3d cone-item"><div class="cone-3d-img"><img src="https://i.ibb.co/QF1rBG61/IMG-20261124-WA0039.jpg"></div><h3>Wholesale - 50 Cones</h3><p>Shops & Artists kosam</p><div class="price" id="price3">₹3999</div><a class="btn-pink" href="https://wa.me/916303131084?text=Hi!%20Wholesale%20Kavali">Order Now</a></div>
 </div>
-</section>
-<footer>
-<p>© Chinni Henna Academy - Hyderabad</p>
-<button onclick="openAdmin()">Admin</button>
-</footer>
-<div id="adminPanel"><div class="admin-box">
-<h2>Admin Panel</h2>
-<input type="password" id="adminPass" placeholder="Password">
-<button onclick="checkAdmin()">Login</button>
-<div id="adminForm" style="display:none">
-<hr>
-<h3>Add Video</h3>
-<input type="text" id="vTitle" placeholder="Video Title">
-<select id="vType">
-<option value="online">ONLINE CLASS VIDEOS</option>
-<option value="offline">OFFLINE CLASS VIDEOS</option>
-<option value="events">EVENTS VIDEOS</option>
-</select>
-<input type="text" id="vLink" placeholder="YouTube / Shorts Link">
-<button onclick="addVideo()">Add Video</button>
-<button onclick="closeAdmin()" style="background:#888">Close</button>
-</div></div></div>
+<h2 class="sec-title">🎓 CLASSES & <span>BOOKING</span></h2>
+<div class="class-grid">
+  <div class="class-card"><h3>Basic Course</h3><p>15 Days • Beginners</p><div class="price" id="classPrice1">Call For Fees</div><a class="btn-green" href="https://wa.me/916303131084?text=Hi!%20Basic%20Course">Join Now</a></div>
+  <div class="class-card"><h3>Bridal Master</h3><p>30 Days • Certificate</p><div class="price" id="classPrice2">Call For Fees</div><a class="btn-green" href="https://wa.me/916303131084?text=Hi!%20Bridal%20Course">Join Now</a></div>
+  <div class="class-card"><h3>Online Live</h3><p>Phone lone nerchuko</p><div class="price" id="classPrice3">Call For Fees</div><a class="btn-green" href="https://wa.me/916303131084?text=Hi!%20Online%20Class">Join Now</a></div>
+</div>
+<h2 class="sec-title">📱 ONLINE CLASS <span>VIDEOS</span></h2>
+<div class="video-grid" id="onlineVideos"><div class="video-card"><div class="video-box"><p style="padding:60px 10px;color:#888">📱 Online Video 1 - Admin lo Add Chey</p></div><h3>Basic Mehndi - Day 1</h3></div><div class="video-card"><div class="video-box"><p style="padding:60px 10px;color:#888">📱 Online Video 2 - Admin lo Add Chey</p></div><h3>Basic Mehndi - Day 2</h3></div></div>
+<h2 class="sec-title">🏫 OFFLINE CLASS <span>VIDEOS</span></h2>
+<div class="video-grid" id="offlineVideos"><div class="video-card"><div class="video-box"><p style="padding:60px 10px;color:#888">🏫 Offline Class Video - Admin lo Add Chey</p></div><h3>Classroom Practice</h3></div><div class="video-card"><div class="video-box"><p style="padding:60px 10px;color:#888">🏫 Offline Class Video - Admin lo Add Chey</p></div><h3>Students Work</h3></div></div>
+<h2 class="sec-title">🎉 EVENTS <span>VIDEOS</span></h2>
+<div class="video-grid" id="eventVideos"><div class="video-card"><div class="video-box"><p style="padding:60px 10px;color:#888">🎉 Bridal Event Video - Admin lo Add Chey</p></div><h3>Bridal Mehndi - Hyderabad</h3></div><div class="video-card"><div class="video-box"><p style="padding:60px 10px;color:#888">🎉 Engagement Video - Admin lo Add Chey</p></div><h3>Engagement Mehndi</h3></div></div>
+<div class="book-box"><h2>📅 Book Your Event</h2><input id="bName" placeholder="Mee Peru"><input id="bPhone" placeholder="Phone Number"><input id="bDate" type="date"><select id="bType"><option>Bridal Mehndi</option><option>Engagement</option><option>Baby Shower</option><option>Sangeet / Party</option><option>Class Join</option></select><button class="btn-green full" onclick="bookNow()">Book on WhatsApp ✅</button></div>
+<div id="adminPanel" class="admin"><h3>⚙️ ADMIN PANEL</h3><p style="font-size:13px;color:#aaa">Password: <b>chinni123</b></p><h4 style="color:#ffd60a;margin-top:15px">💰 PRICE CHANGE</h4><label>Cone 1 Price</label><input id="aPrice1" value="₹99"><label>Cone 2 Price (5 Cones)</label><input id="aPrice2" value="₹449"><label>Cone 3 Price (Wholesale)</label><input id="aPrice3" value="₹3999"><label>Basic Course Price</label><input id="aClass1" value="Call For Fees"><label>Bridal Course Price</label><input id="aClass2" value="Call For Fees"><label>Online Course Price</label><input id="aClass3" value="Call For Fees"><button class="btn-pink full" onclick="saveAdmin()">Save Prices ✅</button><h4 style="color:#ffd60a;margin-top:20px">🎬 VIDEO UPLOAD</h4><label>Video Title</label><input id="vTitle" placeholder="Ex: Bridal Mehndi - Day 1"><label>Ekada Pettali?</label><select id="vType"><option value="onlineVideos">📱 Online Class</option><option value="offlineVideos">🏫 Offline Class</option><option value="eventVideos">🎉 Event Video</option></select><label>YouTube Link / Video Link (mp4)</label><input id="vLink" placeholder="Paste YouTube link / https://...mp4"><label>Leda Phone nunchi Video Select Chey</label><input id="vFile" type="file" accept="video/*"><button class="btn-green full" onclick="addVideo()">Add Video ✅</button><button onclick="closeAdmin()" style="background:#333;color:white;padding:10px;border:none;border-radius:10px;width:100%;margin-top:12px">Close</button></div>
+<footer>CHINNI HENNA ACADEMY • Hyderabad • 6303131084</footer>
 <script>
-function openAdmin(){document.getElementById('adminPanel').style.display='block';}
+function togglePause(id,btn){var el=document.getElementById(id);el.classList.toggle('paused');if(el.classList.contains('paused')){btn.innerText='▶️ Play Chey';btn.style.background='#25D366';btn.style.color='white';}else{btn.innerText='⏸️ Pause Chey';btn.style.background='#ffd60a';btn.style.color='black';}}
+var allPaused=false;function toggleAllCones(btn){allPaused=!allPaused;document.querySelectorAll('.cone-item').forEach(function(c){if(allPaused)c.classList.add('paused');else c.classList.remove('paused');});if(allPaused){btn.innerText='▶️ Anni Cones Play Chey';btn.style.background='#25D366';btn.style.color='white';}else{btn.innerText='⏸️ Anni Cones Pause Chey';btn.style.background='#ffd60a';btn.style.color='black';}}
+document.getElementById('logoCoin').addEventListener('click',function(){this.classList.toggle('paused');});document.getElementById('oneCone').addEventListener('click',function(){this.classList.toggle('paused');});document.querySelectorAll('.cone-item').forEach(function(c){c.addEventListener('click',function(e){if(e.target.tagName==='A')return;this.classList.toggle('paused');});});
+function bookNow(){var n=document.getElementById('bName').value;var p=document.getElementById('bPhone').value;var d=document.getElementById('bDate').value;var t=document.getElementById('bType').value;window.open("https://wa.me/916303131084?text="+encodeURIComponent("Hi Chinni Henna! Booking - Name: "+n+", Phone: "+p+", Date: "+d+", Event: "+t));}
+function openAdmin(){var pass=prompt("Admin Password:");if(pass==="chinni123"){document.getElementById('adminPanel').style.display='block';}else if(pass!==null){alert("Wrong Password!");}}
 function closeAdmin(){document.getElementById('adminPanel').style.display='none';}
-function checkAdmin(){if(document.getElementById('adminPass').value==="chinni123"){document.getElementById('adminForm').style.display='block';alert("Login Success!");}else{alert("Wrong Password!");}}
-function getYouTubeId(url){var m=url.match(/(?:youtube\.com\/(?:watch\?v=|shorts\/|embed\/)|youtu\.be\/)([^&?\/ ]+)/);return m?m[1]:null;}
-function loadVideos(){
-var vids=JSON.parse(localStorage.getItem("chinniVideos")||"[]");
-if(vids.length===0){vids=[{title:"Informational Video For Mehndi Artist",id:"zfXAivWo0YQ",type:"online"}];localStorage.setItem("chinniVideos",JSON.stringify(vids));}
-var map={online:"onlineVideos",offline:"offlineVideos",events:"eventVideos"};
-for(var t in map){var box=document.getElementById(map[t]);if(!box)continue;box.innerHTML="";vids.forEach(function(v,i){if(v.type!==t)return;var d=document.createElement("div");d.className="video-box";d.innerHTML='<iframe src="https://www.youtube.com/embed/'+v.id+'" allowfullscreen></iframe><h3>'+v.title+'</h3><button onclick="deleteVideo('+i+')">Delete</button>';box.appendChild(d);});}
-}
-function addVideo(){var title=document.getElementById('vTitle').value||"New Video";var type=document.getElementById('vType').value;var id=getYouTubeId(document.getElementById('vLink').value);if(!id){alert("Correct Link pettu!");return;}var vids=JSON.parse(localStorage.getItem("chinniVideos")||"[]");vids.push({title:title,id:id,type:type});localStorage.setItem("chinniVideos",JSON.stringify(vids));loadVideos();alert("Video Save Ayyindhi!");}
-function deleteVideo(i){var vids=JSON.parse(localStorage.getItem("chinniVideos")||"[]");vids.splice(i,1);localStorage.setItem("chinniVideos",JSON.stringify(vids));loadVideos();}
-loadVideos();
+function saveAdmin(){document.getElementById('price1').innerText=document.getElementById('aPrice1').value;document.getElementById('price2').innerText=document.getElementById('aPrice2').value;document.getElementById('price3').innerText=document.getElementById('aPrice3').value;document.getElementById('classPrice1').innerText=document.getElementById('aClass1').value;document.getElementById('classPrice2').innerText=document.getElementById('aClass2').value;document.getElementById('classPrice3').innerText=document.getElementById('aClass3').value;alert("Prices Saved! ✅");closeAdmin();}
+function getYouTubeId(url){var m=url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/shorts\/)([^&?/]+)/);return m?m[1]:null;}
+function addVideo(){var title=document.getElementById('vTitle').value||"New Video";var type=document.getElementById('vType').value;var link=document.getElementById('vLink').value.trim();var file=document.getElementById('vFile').files[0];var container=document.getElementById(type);if(file){var url=URL.createObjectURL(file);var div=document.createElement('div');div.className='video-card';div.innerHTML='<div class="video-box"><video src="'+url+'" controls></video></div><h3>'+title+'</h3><button onclick="this.parentElement.remove()" style="background:#ff4d6d;color:white;border:none;padding:6px 14px;border-radius:20px;margin-top:8px;cursor:pointer">Delete ❌</button>';container.prepend(div);alert("Video Added! ✅");document.getElementById('vTitle').value='';document.getElementById('vLink').value='';document.getElementById('vFile').value='';return;}if(!link){alert("Link ivvu leka file select chey macha!");return;}var ytId=getYouTubeId(link);var div=document.createElement('div');div.className='video-card';if(ytId){div.innerHTML='<div class="video-box"><iframe src="https://www.youtube.com/embed/'+ytId+'" allowfullscreen></iframe></div><h3>'+title+'</h3><button onclick="this.parentElement.remove()" style="background:#ff4d6d;color:white;border:none;padding:6px 14px;border-radius:20px;margin-top:8px;cursor:pointer">Delete ❌</button>';}else{div.innerHTML='<div class="video-box"><video src="'+link+'" controls></video></div><h3>'+title+'</h3><button onclick="this.parentElement.remove()" style="background:#ff4d6d;color:white;border:none;padding:6px 14px;border-radius:20px;margin-top:8px;cursor:pointer">Delete ❌</button>';}container.prepend(div);alert("Video Added! ✅");document.getElementById('vTitle').value='';document.getElementById('vLink').value='';}
 </script>
 </body>
-</html>
+  </html>
