@@ -97,4 +97,18 @@ function getYouTubeId(url){var m=url.match(/(?:youtube\.com\/watch\?v=|youtu\.be
 function addVideo(){var title=document.getElementById('vTitle').value||"New Video";var type=document.getElementById('vType').value;var link=document.getElementById('vLink').value.trim();var file=document.getElementById('vFile').files[0];var container=document.getElementById(type);if(file){var url=URL.createObjectURL(file);var div=document.createElement('div');div.className='video-card';div.innerHTML='<div class="video-box"><video src="'+url+'" controls></video></div><h3>'+title+'</h3><button onclick="this.parentElement.remove()" style="background:#ff4d6d;color:white;border:none;padding:6px 14px;border-radius:20px;margin-top:8px;cursor:pointer">Delete ❌</button>';container.prepend(div);alert("Video Added! ✅");document.getElementById('vTitle').value='';document.getElementById('vLink').value='';document.getElementById('vFile').value='';return;}if(!link){alert("Link ivvu leka file select chey macha!");return;}var ytId=getYouTubeId(link);var div=document.createElement('div');div.className='video-card';if(ytId){div.innerHTML='<div class="video-box"><iframe src="https://www.youtube.com/embed/'+ytId+'" allowfullscreen></iframe></div><h3>'+title+'</h3><button onclick="this.parentElement.remove()" style="background:#ff4d6d;color:white;border:none;padding:6px 14px;border-radius:20px;margin-top:8px;cursor:pointer">Delete ❌</button>';}else{div.innerHTML='<div class="video-box"><video src="'+link+'" controls></video></div><h3>'+title+'</h3><button onclick="this.parentElement.remove()" style="background:#ff4d6d;color:white;border:none;padding:6px 14px;border-radius:20px;margin-top:8px;cursor:pointer">Delete ❌</button>';}container.prepend(div);alert("Video Added! ✅");document.getElementById('vTitle').value='';document.getElementById('vLink').value='';}
 </script>
 </body>
+  <style>
+/* OPTION 1 - ROYAL GOLD */
+body { background: #150A08 !important; color: #F5EFE6 !important; }
+.top-bar, header { background: #C9A24B !important; color: #150A08 !important; }
+h1, h2, h3, .price { color: #C9A24B !important; }
+button, .btn, .book-btn, .join-btn, .whatsapp-btn, .order-btn {
+  background: #C9A24B !important;
+  color: #150A08 !important;
+  border: none !important;
+}
+.card, .cone-card, .course-card, .class-card { background: #221210 !important; border: 1px solid #C9A24B !important; }
+</style>
+
+</body>
 </html>
